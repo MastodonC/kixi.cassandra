@@ -16,6 +16,8 @@ Running the Vagrant file will build the Docker image, starting Cassandra in the 
 
 ## Usage with Kixi.Hecuba
 
+#####First use:
+
 + ``cd`` to ``kixi.hecuba/cql``
 + ``cqlsh -f hecuba-schema.cql``
 + Start a repl in your favourite way.
@@ -24,6 +26,15 @@ Running the Vagrant file will build the Docker image, starting Cassandra in the 
 + ``(kixi.hecuba.security/add-user! (:store system) "someone@example.com" "<password>" #{:kixi.hecuba.security/super-admin})`` (the username and password should match those in .hecuba.edn
 + ``(etl/load-test-data system)``
 + Then view localhost:8010 in a browser
+
+#####Subsequent useage:
+
++ ``vagrant up`` 
++ Start a repl in your favourite way.
++ Start kixi.hecuba with ``(go)``
++ Then view localhost:8010 in a browser
+
+If you want to clear the database, then ``cqlsh``, ``DROP KEYSPACE test;`` and follow the First use instructions above.
 
 ## License
 
